@@ -1,12 +1,17 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.contrib import messages  # Para usar mensajes flash
 import pandas as pd
 from .models import DatosXLSX
 from django.shortcuts import render, redirect
 from django.http import HttpResponseServerError
+from django.http import JsonResponse
 
 #  Usando la librería pandas para leer el archivo XLSX y guardar los datos en la base de datos.
+
+
+def inicio(request):
+    return render(request, 'index.html')
 
 
 def cargar_archivo(request):
@@ -37,12 +42,12 @@ def cargar_archivo(request):
                         }
                     )
 
-                return redirect('cargar_archivo')
+                return JsonResponse({'status_server': 'success', 'message': 'Felicitaciones, la data fue importada correctamente 😉'})
             else:
-                return render(request, 'index.html')
-    except Exception as e:
-        # Registra el error para diagnóstico
-        print(f"Error al cargar el archivo: {str(e)}")
-        return HttpResponseServerError("Error interno del servidor")
+                return JsonResponse({'status_server': 'error', 'message': 'El archivo debe ser un archivo de Excel válido.'})
+        else:
+            return render(request, 'index.html')
 
-    return render(request, 'index.html')
+    except Exception as e:
+        print(f"Error al cargar el archivo: {str(e)}")
+        return JsonResponse({'status_server': 'error', 'message': 'Error interno del servidor.'})

@@ -1,0 +1,14 @@
+body {
+  background-color: #ebe8e8 !important;
+}
+.container {
+  background-color: #fff !important;
+}
+.titulo {
+  font-weight: 800;
+  font-size: 30px;
+}
+.verde {
+  background-color: #57c81b !important;
+  border: #57c81b !important;
+}

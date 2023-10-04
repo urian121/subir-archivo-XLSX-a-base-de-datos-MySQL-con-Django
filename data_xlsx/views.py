@@ -3,8 +3,6 @@ from django.shortcuts import render
 from django.contrib import messages  # Para usar mensajes flash
 import pandas as pd
 from .models import DatosXLSX
-from django.shortcuts import render, redirect
-from django.http import HttpResponseServerError
 from django.http import JsonResponse
 
 #  Usando la librería pandas para leer el archivo XLSX y guardar los datos en la base de datos.

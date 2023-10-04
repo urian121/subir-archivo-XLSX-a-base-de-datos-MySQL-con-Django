@@ -82,7 +82,8 @@ DATABASES = {
         'NAME': 'bd_empleados',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': 'localhost',
+        # 'HOST': '127.0.0.1',
+        'HOST': '127.0.0.1',
         'PORT': '3306',       # El puerto predeterminado de MySQL es 3306.
     }
 }

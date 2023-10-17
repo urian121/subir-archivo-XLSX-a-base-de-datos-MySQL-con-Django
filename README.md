@@ -133,3 +133,9 @@
     Da las gracias públicamente 🤓.
 
 ## No olvides SUSCRIBIRTE 👍
+
+#### Notas:
+
+        El método iterrows() es una función proporcionada por la biblioteca Pandas en Python y se utiliza para iterar a través de las filas de un DataFrame.
+
+        Un DataFrame es una estructura de datos bidimensional que se utiliza comúnmente en Pandas para representar datos tabulares, similar a una hoja de cálculo.
